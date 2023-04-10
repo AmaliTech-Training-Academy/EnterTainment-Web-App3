@@ -2,11 +2,12 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Signup from './pages/Signup';
+import Login from './pages/Login';
 
 function App() {
   return (
     <div className="App">
-     
+    <Login/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
