@@ -1,6 +1,6 @@
 import React from 'react'
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
-import { search } from '../types'
+import { search } from '../dataTypes'
 
 export default function Filter({searchType,searchValue,setSearch}:search) {
   return (

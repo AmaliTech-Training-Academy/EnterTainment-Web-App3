@@ -3,25 +3,8 @@ import BookmarkBorderOutlinedIcon from '@mui/icons-material/BookmarkBorderOutlin
 import BookmarkOutlinedIcon from '@mui/icons-material/BookmarkOutlined';
 import rawData from './../data.json' 
 import Filter from '../components/Filter'
-
+import { data, movie } from '../dataTypes';
 export default function Movies() {
-
-    type movie =  {
-        title: string,
-        thumbnail: {
-            regular: {
-                small: string;
-                medium: string;
-                large: string;
-            }
-        },
-        year: number,
-        category: string,
-        rating: string,
-        isBookmarked: boolean,
-        isTrending: boolean
-    }
-    type data= [movie]
     
     const [search, setSearch] = useState('')
     const [data, setData] = useState(rawData)
