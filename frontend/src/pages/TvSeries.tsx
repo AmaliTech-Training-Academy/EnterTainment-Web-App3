@@ -45,10 +45,19 @@ export default function TvSeries() {
                         <div>
                             <div className=' self-start flex gap-3 text-xs font-light'>
                                 <span>{movie.year}</span>
-                                <span>{movie.category}</span>
-                                <span>{movie.rating}</span>
+                                <span className='flex gap-1'>
+                                    <span>&bull;</span>
+                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path opacity="0.75" fill-rule="evenodd" clip-rule="evenodd" d="M5.448 2.68865H12V12H0V2.68865H2.952L1.332 0.72163L2.268 0.0174588L4.2 2.3453L6.132 0L7.068 0.72163L5.448 2.68865ZM1.2 3.85257V10.8361H7.2V3.85257H1.2ZM10.2 8.50824H9V7.34433H10.2V8.50824ZM9 6.18041H10.2V5.01649H9V6.18041Z" fill="white"/>
+                                    </svg>
+                                    {movie.category}
+                                </span>
+                                <span className='flex gap-1'>
+                                    <span>&bull;</span> 
+                                    {movie.rating}
+                                </span>
                             </div>
-                            <div className=' text-left text-sm font-medium'>{movie.title}</div>
+                            <div className=' text-left text-sm font-medium mini-pc:text-lg'>{movie.title}</div>
                         </div>
                     </div>
                 ))
