@@ -4,10 +4,10 @@ import './App.css';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Movies from './pages/Movies';
+
 function App() {
   return (
     <div className="App">
-      <Movies/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
