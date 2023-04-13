@@ -3,10 +3,10 @@ import BookmarkBorderOutlinedIcon from '@mui/icons-material/BookmarkBorderOutlin
 import BookmarkOutlinedIcon from '@mui/icons-material/BookmarkOutlined';
 import rawData from './../data.json' 
 import Filter from '../components/Filter'
-import { data, movie } from '../dataTypes';
+import { movie } from '../dataTypes';
 export default function Movies() {
     
-    const [search, setSearch] = useState('')
+    const [search, setSearch] = useState<string>('')
     const [data, setData] = useState(rawData)
 
     useEffect(()=>{
