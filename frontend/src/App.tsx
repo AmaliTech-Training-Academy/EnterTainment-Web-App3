@@ -5,6 +5,8 @@ import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Movies from './pages/Movies';
 import TvSeries from './pages/TvSeries';
+
+
 function App() {
   return (
     <div className="App bg-teal-blue">

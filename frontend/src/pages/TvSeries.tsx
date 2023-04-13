@@ -28,7 +28,7 @@ export default function TvSeries() {
   return (
     <div className=' bg-teal-blue max-w-[1440px] mx-auto min-h-screen text-white flex flex-col gap-6 items-stretch px-4 tablet:px-6 mini-pc:px-12' >
         <Filter searchType='TV series' searchValue={search} setSearch={setSearch}/>
-        <div  className=' text-xl text-left'>TV Series</div>
+        <div  className=' text-xl text-left mini-pc:text-3xl'>TV Series</div>
         <div className=' grid grid-cols-2 gap-4 tablet:grid-cols-3 mini-pc:grid-cols-4'>
             {
                 filter().map((movie,ind)=>(

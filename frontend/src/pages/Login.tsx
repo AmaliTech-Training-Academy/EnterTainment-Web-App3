@@ -49,8 +49,8 @@ export default function Login() {
                 <input 
                   type='submit' 
                   value='Login to your account' 
-                  onClick={(event)=>{
-                    event.preventDefault()
+                  onClick={(e)=>{
+                    e.preventDefault()
                     inputValidation()
                  }}
                   className=' w-full h-12 mt-4 bg-red rounded-lg outline-none text-xl hover:bg-white hover:text-teal-blue hover:cursor-pointer'
