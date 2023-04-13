@@ -29,8 +29,8 @@ export default function Login() {
                     id='email'
                     type="email" 
                     placeholder='Email address'
-                    onChange={(e)=>{
-                      setEmail(e.target.value)
+                    onChange={(event)=>{
+                      setEmail(event.target.value)
                     }} 
                     className=' w-full h-full bg-transparent border-solid border-grey border-b-2 outline-none pb-4 px-4 focus:border-white focus:caret-red hover:cursor-pointer' 
                   /> <div id='emailText' className=' relative left-[60%] mt-[-2.25rem] w-28 text-red'>Can't be empty</div>
