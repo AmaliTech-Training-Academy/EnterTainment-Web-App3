@@ -10,7 +10,6 @@ import TvSeries from './pages/TvSeries';
 function App() {
   return (
     <div className="App bg-teal-blue">
-      <TvSeries/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
