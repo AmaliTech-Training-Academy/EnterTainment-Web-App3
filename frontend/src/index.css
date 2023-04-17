@@ -3,6 +3,227 @@
 @tailwind utilities;
 
 
+.search-bar {
+  display: flex;
+  height: 32px;
+  position: absolute;
+  width: 381px;
+  left: 164px;
+  top: 64px;
+  gap: 24px;
+}
+.search-input {
+  position: absolute;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 300px;
+  line-height: 30px;
+  background-color: transparent;
+  caret-color: #fc4747;
+  width: 334px;
+  height: 46px;
+  border: none;
+  outline: none;
+  padding-bottom: 14px;
+  left: 56px;
+}
+.search-input:focus {
+  width: 70vw;
+  border-bottom: 1px solid #5a698f;
+}
+.search-input::placeholder {
+  color: #ffffff;
+  font-size: 24px;
+  line-height: 30px;
+  mix-blend-mode: normal;
+  opacity: 0.5;
+  font-weight: 300px;
+
+  position: absolute;
+}
+.search-input:hover {
+  cursor: pointer;
+}
+
+.regular-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  row-gap: 32px;
+}
+.regular-card {
+  width: 280px;
+  height: 226px;
+  border-radius: 8px;
+}
+.regular-card:hover {
+  cursor: pointer;
+}
+.regular-bookmark {
+  margin: 0px;
+  padding: 0px;
+  position: absolute;
+  height: 32px;
+  width: 32px;
+  border-radius: 50px;
+  background: rgba(16, 20, 30, 0.5);
+  z-index: 2;
+  justify-content: center;
+  margin-left: 232px;
+  margin-top: 16px;
+  margin-right: 16px;
+}
+.bookmarkTick > svg {
+  position: absolute;
+  margin: 0px;
+  padding: 0px;
+  margin-left: 10px;
+  margin-top: 9px;
+  stroke: #fff;
+  fill: none;
+}
+.bookmarkTick:hover {
+  background-color: #ffffff;
+  opacity: 1;
+}
+.bookmarkTick:hover > svg {
+  stroke: #10141e;
+  fill: none;
+}
+.ticked > svg {
+  fill: #ffffff;
+  opacity: 1;
+}
+.ticked:hover > svg {
+  fill: #10141e;
+  opacity: 1;
+}
+.play-container {
+  height: 174px;
+  width: 280px;
+  background-color: #5a698f;
+  border-radius: 8px;
+}
+.play-container > .play {
+  position: absolute;
+  height: 48px;
+  width: 117px;
+  border-radius: 28.5px;
+  z-index: 1;
+  border: 0px;
+  display: flex;
+  margin-top: 63px;
+  margin-left: 77px;
+  opacity: 0;
+}
+.play-container:hover .play {
+  background-color: rgba(255, 255, 255, 0.25);
+  opacity: 1;
+}
+.movie-cover {
+  margin: 0px;
+  padding: 0px;
+  margin-bottom: 0px;
+  border-radius: 8px;
+  height: 174px;
+  width: 280px;
+}
+.movie-details {
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  gap: 8px;
+  height: 16px;
+  font-size: 13px;
+  line-height: 16px;
+  margin-top: 8px;
+  color: #ffffff;
+  font-weight: 300px;
+  mix-blend-mode: normal;
+  opacity: 0.75;
+}
+.movie-details > li {
+  margin: 0;
+  padding: 0;
+  width: 3px;
+  height: 3px;
+}
+.regular-card > h2 {
+  margin: 0px;
+  padding: 0px;
+  margin-top: 5px;
+  font-size: 18px;
+  line-height: 23px;
+  font-weight: 500px;
+}
+.regular-view > .section-title {
+  margin-bottom: 38px;
+}
+
+@media screen and (min-width: 376px) and (max-width: 768px) {
+  .search-bar {
+    left: 25px;
+    top: 128px;
+  }
+
+  .regular-container {
+    gap: 29px;
+    row-gap: 24px;
+  }
+  .regular-card {
+    width: 220px;
+    height: 192px;
+    border-radius: 8px;
+  }
+  .regular-card:hover {
+    cursor: pointer;
+  }
+  .regular-bookmark {
+    margin-left: 172px;
+  }
+  .play-container {
+    height: 140px;
+    width: 220px;
+  }
+  .play-container > .play {
+    margin-top: 46px;
+    margin-left: 51px;
+  }
+
+  .movie-cover {
+    height: 140px;
+    width: 220px;
+  }
+  .movie-details {
+    height: 14px;
+    font-size: 13px;
+    line-height: 16px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .search-bar {
+    display: flex;
+    height: 24px;
+    position: absolute;
+    width: 256px;
+    left: 16px;
+    top: 80px;
+    gap: 16px;
+  }
+  .search-input {
+    font-size: 16px;
+    line-height: 20px;
+    left: 40px;
+    top: calc(50% - 20px / 2);
+    height: 32px;
+    padding-bottom: 10px;
+  }
+  .search-input::placeholder {
+    font-size: 16px;
+    line-height: 20.16px;
+
+
 
 
 
@@ -79,6 +300,51 @@ overflow-x: hidden;
     fill: #ffffff;
   }
 
+  .regular-container {
+    width: 343px;
+    gap: 15px;
+    row-gap: 16px;
+  }
+  .regular-card {
+    width: 164px;
+    height: 154px;
+    border-radius: 8px;
+  }
+  .regular-bookmark {
+    margin-left: 124px;
+    margin-top: 8px;
+    margin-right: 8px;
+  }
+
+
+  .play-container {
+    height: 110px;
+    width: 164px;
+    background-color: #5a698f;
+    border-radius: 8px;
+  }
+  .play-container > .play {
+    margin-top: 31px;
+    margin-left: 22px;
+    opacity: 0;
+  }
+  .movie-cover {
+    height: 110px;
+    width: 164px;
+  }
+  .movie-details {
+    gap: 8px;
+    height: 14px;
+    font-size: 11px;
+    line-height: 14px;
+    margin-top: 8px;
+  }
+  .regular-card > h2 {
+    margin-top: 4px;
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
 
   @media screen and (min-width: 376px) and (max-width: 768px) {
 
@@ -530,4 +796,5 @@ overflow-x: hidden;
 }
 
   
+
 
