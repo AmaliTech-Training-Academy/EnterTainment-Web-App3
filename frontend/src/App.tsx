@@ -6,18 +6,6 @@ import Login from './pages/Login';
 import Movies from './pages/Movies';
 
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-
-import TvSeries from './pages/TvSeries';
-
-
-import SideBar from './components/SideBar';
-
-import SearchBar from './components/SearchBar';
 
 
 function App() {
