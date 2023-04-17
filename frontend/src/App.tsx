@@ -3,13 +3,18 @@ import logo from './logo.svg';
 import './App.css';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
+
+import SideBar from './components/SideBar';
+
 import SearchBar from './components/SearchBar';
+
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <div className="wrapper">
+            <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
@@ -21,6 +26,8 @@ function App() {
         >
           Learn React
         </a>
+
+        </div>
       </header>
     </div>
   );
