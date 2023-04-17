@@ -3,6 +3,152 @@
 @tailwind utilities;
 
 
+
+
+body {
+    background-color: #10141e;
+overflow-x: hidden; 
+}
+
+.wrapper {
+    position: absolute;
+    width: 100%;
+    max-width: 1440px;
+    top: 0;
+  }
+.side-bar {
+    position: absolute;
+    width: 96px;
+    height: 960px;
+    background-color: #161d2f;
+    border-radius: 20px;
+    left: 32px;
+    top: 32px;
+  
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .logo {
+    position: absolute;
+    width: 32px;
+    height: 25.6px;
+    left: 31.86px;
+    top: 35.41px;
+  }
+  
+  .pages {
+    position: absolute;
+    width: 20px;
+    height: 200px;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+  
+    top: 136px;
+    left: 38px;
+  }
+  .pages > * {
+    fill: #5a698f;
+  }
+  .pages > * > svg {
+    width: 20px;
+    height: 20px;
+    object-fit: inherit;
+  }
+  .pages > * > svg:hover {
+    cursor: pointer;
+    fill: #fc4747;
+  }
+  .avatar {
+    position: absolute;
+    top: 888px;
+    left: 28px;
+  }
+  .avatar > img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+  }
+  .logo,
+  .avatar:hover {
+    cursor: pointer;
+  }
+  .active {
+    fill: #ffffff;
+  }
+
+
+  @media screen and (min-width: 376px) and (max-width: 768px) {
+
+    .side-bar {
+      width: 719px;
+      height: 72px;
+      top: 23px;
+      left: 25px;
+      flex-direction: row;
+    }
+    .logo {
+      left: 24px;
+      top: 24px;
+    }
+    .pages {
+      height: 20px;
+      width: 172.92px;
+      flex-direction: row;
+      top: 27px;
+      left: 273px;
+    }
+    .avatar {
+      top: 21px;
+      left: 671px;
+    }
+    .avatar > img {
+      width: 32px;
+      height: 32px;
+    }
+}
+
+  @media screen and (max-width: 375px) {
+    .side-bar {
+      border-radius: 0px;
+      width: 375px;
+      height: 56px;
+      top: 0px;
+      left: 0px;
+      flex-direction: row;
+    }
+    .logo {
+      width: 25px;
+      height: 20px;
+      left: 16px;
+      top: 18px;
+    }
+    .logo > svg {
+      width: 25px;
+      height: 20px;
+    }
+    .pages {
+      height: 16px;
+      width: 133.54px;
+      flex-direction: row;
+  
+      top: 20px;
+      left: 121px;
+    }
+    .pages > * > svg {
+      width: 16px;
+      height: 16px;
+    }
+    .avatar {
+      top: 16px;
+      left: 335px;
+    }
+    .avatar > img {
+      width: 24px;
+      height: 24px;
+    }
+  }
 .search-bar {
     display: flex;
     height: 32px;
@@ -77,4 +223,5 @@
       line-height: 20.16px;
     }
 }
+
   
