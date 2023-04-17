@@ -5,11 +5,28 @@ import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Movies from './pages/Movies';
 
+
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+
+import TvSeries from './pages/TvSeries';
+
+
+import SideBar from './components/SideBar';
+
+import SearchBar from './components/SearchBar';
+
+
+function App() {
+  return (
+    <div className="App bg-teal-blue">
+      <header className="App-header">
+        <div className="wrapper">
+            <img src={logo} className="App-logo" alt="logo" />
+
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
@@ -21,6 +38,8 @@ function App() {
         >
           Learn React
         </a>
+
+        </div>
       </header>
     </div>
   );
