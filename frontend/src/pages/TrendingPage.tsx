@@ -1,5 +1,6 @@
 import data from "../data.json";
 import Carousel from "../components/Carousel";
+import RegularCard from "../components/RegularCard";
 
 const TrendingPage = () => {
   const trending = data.filter((media) => {
@@ -17,6 +18,7 @@ const TrendingPage = () => {
       <div className="recommended-view">
         <p className="section-title">Recommended for you</p>
         <div className="regular-container"></div>
+         <RegularCard data={recommended}/>
       </div>
     </div>
   );
