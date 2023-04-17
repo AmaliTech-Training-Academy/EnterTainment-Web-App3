@@ -3,6 +3,9 @@ import logo from './logo.svg';
 import './App.css';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
+import Movies from './pages/Movies';
+import TvSeries from './pages/TvSeries';
+
 
 import SideBar from './components/SideBar';
 
@@ -11,7 +14,7 @@ import SearchBar from './components/SearchBar';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App bg-teal-blue">
       <header className="App-header">
         <div className="wrapper">
             <img src={logo} className="App-logo" alt="logo" />
