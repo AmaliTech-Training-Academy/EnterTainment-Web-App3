@@ -3,7 +3,11 @@ import logo from './logo.svg';
 import './App.css';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
+
 import SideBar from './components/SideBar';
+
+import SearchBar from './components/SearchBar';
+
 
 function App() {
   return (
