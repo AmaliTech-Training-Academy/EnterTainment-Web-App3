@@ -17,8 +17,9 @@ const TrendingPage = () => {
       </div>
       <div className="recommended-view">
         <p className="section-title">Recommended for you</p>
-        <div className="regular-container"></div>
-         <RegularCard data={recommended}/>
+        <div className="regular-container">
+          <RegularCard data={recommended} />
+        </div>
       </div>
     </div>
   );
