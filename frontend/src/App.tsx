@@ -4,31 +4,25 @@ import './App.css';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Movies from './pages/Movies';
-
-
+import { ViewProvider } from "./components/ViewContext";
+import SearchBar from './components/SearchBar';
+import SideBar from './components/SideBar';
+import useSearch from './hooks/useSearch';
 
 
 function App() {
+  const { search,word } = useSearch();
   return (
-    <div className="App bg-teal-blue">
-      <header className="App-header">
+    <div className="App">
+      <div className="App-container">
         <div className="wrapper">
-            <img src={logo} className="App-logo" alt="logo" />
-
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-
+        <SideBar />
+        <ViewProvider search={search} word={word} >
+          <SearchBar />
+        </ViewProvider>
         </div>
-      </header>
+            
+      </div>
     </div>
   );
 }
