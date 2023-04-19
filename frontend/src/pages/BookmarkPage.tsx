@@ -1,6 +1,18 @@
 import RegularCard from "../components/RegularCard";
-import data from "../data.json";
+import SearchBar from "../components/SearchBar";
+import SideBar from "../components/SideBar";
+import { ViewProvider } from "../components/ViewContext";
+import jsonData from "../data.json";
+import { movie } from "../dataTypes";
+import useSearch from "../hooks/useSearch";
+
 const BookmarkPage = () => {
+
+  if (!localStorage.getItem("data")) {
+    localStorage.setItem("data", JSON.stringify(jsonData))
+  }
+  const data = JSON.parse(localStorage.getItem("data") || "[]") as movie[] 
+
   const bookmarked = data.filter((item) => {
     return item.isBookmarked === true;
   });
@@ -12,7 +24,15 @@ const BookmarkPage = () => {
   const tvShows = bookmarked.filter((item) => {
     return item.category === "TV Series";
   });
+
+  const { search, word } = useSearch(); 
+  
   return (
+    <>
+    <SideBar />
+      <ViewProvider search={search} word={word}>
+        <SearchBar />
+      </ViewProvider>
     <div className="page-container">
       <div className="regular-view">
         <p className="section-title">Bookmarked Movies</p>
@@ -27,6 +47,7 @@ const BookmarkPage = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

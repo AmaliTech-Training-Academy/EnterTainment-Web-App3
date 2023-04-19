@@ -5,13 +5,21 @@ import SearchBar from "../components/SearchBar";
 import SideBar from "../components/SideBar";
 import { ViewProvider } from "../components/ViewContext";
 import useSearch from "../hooks/useSearch";
+import { movie } from "../dataTypes";
 
-const TrendingPage = () => {
-  const trending = data.filter((media) => {
+const TrendingPage = () => { 
+
+  if (!localStorage.getItem("data")) {
+    localStorage.setItem("data", JSON.stringify(data))
+    
+  }
+  const movies = JSON.parse(localStorage.getItem("data") || "[]") as movie[] 
+
+  const trending = movies.filter((media) => {
     return media.isTrending === true;
   });
 
-  const recommended = data.slice(5);
+  const recommended = movies.slice(5);
 
   const { search, word } = useSearch();
   return (

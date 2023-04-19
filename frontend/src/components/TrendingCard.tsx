@@ -7,9 +7,9 @@ const TrendingCard = (data: any) => {
       <img src={data.image} alt={data.title} className="media-image"></img>
       <>
         {data.isBookmarked ? (
-          <IsTicked data={"trending-bookmark"} />
+          <IsTicked data={"trending-bookmark"} originalData={data}/>
         ) : (
-          <NotTicked data={"trending-bookmark"} />
+          <NotTicked data={"trending-bookmark"} originalData={data}/>
         )}
       </>
       <div className="play">
