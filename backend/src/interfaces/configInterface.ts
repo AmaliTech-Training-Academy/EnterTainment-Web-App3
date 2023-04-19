@@ -7,6 +7,7 @@ export interface ConfigInterface {
     DB_PASSWORD?: string;
     DB_DATABASE?: string;
     TEST_DATABASE_URI?: string;
+    PROD_DATABASE_URI?: string;
     SECRET_KEY: string;
     JWT_TOKEN_EXPIRATION: string;
     MAIL_USERNAME: string;
