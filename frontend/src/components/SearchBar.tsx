@@ -26,8 +26,8 @@ const SearchBar = () => {
 
   const searchView = () => {
     return searchString === ""
-      ? navigate(`/${page}/`)
-      : navigate("/search/", { state: { name: page } });
+      ? navigate(`/${page}`)
+      : navigate("/search", { state: { name: page } });
   };
 
   return (

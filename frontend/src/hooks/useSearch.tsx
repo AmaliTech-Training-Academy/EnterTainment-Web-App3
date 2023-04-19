@@ -10,7 +10,7 @@ const search = (e: React.ChangeEvent<HTMLInputElement>) => {
   };
 
 
-console.log(word)
+// console.log(word)
 
   return { search, word};
 }
