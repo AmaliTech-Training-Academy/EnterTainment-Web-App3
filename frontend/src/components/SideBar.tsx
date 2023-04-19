@@ -1,19 +1,31 @@
+import React from "react";
 import { SideBarNavigationButtons } from "./SideBarContents";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const SideBar = () => {
   const navigate = useNavigate();
+  const location = useLocation()
+
   const ButtonClick = (event: React.MouseEvent<HTMLElement>) => {
-    const active = document.querySelectorAll(".active");
-    active.forEach((item) => {
-      item.classList.remove("active");
-    });
-    const button = event.currentTarget;
-    button?.classList.add("active");
+    // const active = document.querySelectorAll(".active");
+    // active.forEach((item) => {
+    //   item.classList.remove("active");
+    // });
+    // const button = event.currentTarget;
+    // button?.classList.add("active");
     let page = event.currentTarget.classList[0];
     navigate(`/${page}`);
     
   };
+  React.useEffect(() => {
+    const path = location.pathname.substring(1);
+    const active = document.querySelectorAll(".active");
+    active.forEach((item) => {
+      item.classList.remove("active");
+    });
+    const button = document.querySelector(`.${path}`);
+    button?.classList.add("active");
+  }, [location])
   return <SideBarNavigationButtons click={ButtonClick} />;
 };
 
