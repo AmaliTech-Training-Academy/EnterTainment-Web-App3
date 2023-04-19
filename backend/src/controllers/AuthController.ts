@@ -111,9 +111,17 @@ export class AuthController {
     });
 
     const userRepo = AppDataSource.getRepository(UserEntity);
-    const user = await userRepo.findOneByOrFail({
+    const user = await userRepo.findOneBy({
       email: loginData.email,
     });
+    if (!user) {
+      return ResponseUtil.sendError(
+        res,
+        "Invalid credentials. Try again",
+        StatusCodes.BAD_REQUEST,
+        ReasonPhrases.BAD_REQUEST
+      );
+    }
     // Check for valid password
     const isValidPassword = await compare(loginData.password, user.password);
 

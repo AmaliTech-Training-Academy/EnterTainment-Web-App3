@@ -7,22 +7,30 @@ const userRepo = AppDataSource.getRepository(UserEntity);
 
 // Registration schema
 export const registerSchema = Joi.object({
-  email: Joi.string().email().required().external(isUnique(userRepo, "email")),
+  email: Joi.string()
+    .email()
+    .required()
+    .external(isUnique(userRepo, "email"))
+    .messages({ "string.empty": "Can't be empty", "string.email": "Enter valid email" }),
   password: Joi.string()
     .pattern(new RegExp("^[a-zA-Z0-9]{8,30}$"))
     .required()
-    .messages({ "string.pattern.base": "Password must be between 8 and 30 characters long" }),
+    .messages({ "string.pattern.base": "Should be 8 characters min", "string.empty": "Can't be empty" }),
   repeat_password: Joi.string()
     .required()
     .valid(Joi.ref("password"))
-    .messages({ "any.only": "Passwords do not match", "any.required": "Passwords do not match" }),
+    .messages({ "any.only": "Passwords must match", "any.required": "Passwords do not match" }),
 });
 
 // login schema
 export const loginSchema = Joi.object({
-  email: Joi.string().email().required(),
-  password: Joi.string()
-    .pattern(new RegExp("^[a-zA-Z0-9]{8,30}$"))
+  email: Joi.string()
+    .email()
     .required()
-    .messages({ "string.pattern.base": "Password must be between 8 and 30 characters long" }),
+    .messages({ "string.empty": "Can't be empty", "string.email": "Enter valid email" }),
+
+  password: Joi.string().pattern(new RegExp("^[a-zA-Z0-9]{8,30}$")).required().messages({
+    "string.pattern.base": "Should be 8 characters min",
+    "string.empty": "Can't be empty",
+  }),
 });
