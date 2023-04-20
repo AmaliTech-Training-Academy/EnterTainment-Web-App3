@@ -3,13 +3,21 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { AuthProvider } from 'react-auth-kit';
+import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <AuthProvider authType={"localstorage"} authName={"_auth"}>
+      <BrowserRouter>
+      <App />
+      </BrowserRouter>
+    
+    </AuthProvider>
+    
   </React.StrictMode>
 );
 

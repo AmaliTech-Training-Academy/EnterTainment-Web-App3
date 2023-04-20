@@ -1,6 +1,13 @@
 import RegularCard from "../components/RegularCard";
-import data from "../data.json";
+import jsonData from "../data.json";
+import { movie } from "../dataTypes";
+
 const BookmarkPage = () => {
+  if (!localStorage.getItem("data")) {
+    localStorage.setItem("data", JSON.stringify(jsonData));
+  }
+  const data = JSON.parse(localStorage.getItem("data") || "[]") as movie[];
+
   const bookmarked = data.filter((item) => {
     return item.isBookmarked === true;
   });
@@ -12,6 +19,7 @@ const BookmarkPage = () => {
   const tvShows = bookmarked.filter((item) => {
     return item.category === "TV Series";
   });
+
   return (
     <div className="page-container">
       <div className="regular-view">

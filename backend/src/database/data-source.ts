@@ -16,7 +16,18 @@ if (configValues.NODE_ENV == "testing") {
     synchronize: true,
     entities: [RoleEntity, UserEntity],
   });
-} else {
+} 
+else if (configValues.NODE_ENV === "production") {
+  AppDataSource = new DataSource({
+    type: "postgres",
+    url: configValues.PROD_DATABASE_URI || "",
+    ssl: true,
+    logging: true,
+    entities: [RoleEntity, UserEntity],
+    migrations: [CreateRolesTable1680894214505, CreateUsersTable1680895101523],
+  });
+}
+else {
   AppDataSource = new DataSource({
     type: "postgres",
     host: configValues.DB_HOST,

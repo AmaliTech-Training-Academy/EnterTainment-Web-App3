@@ -1,8 +1,31 @@
+import { useNavigate } from "react-router-dom";
+import { useSignOut } from "react-auth-kit";
+import { toast } from "react-toastify";
+
 export const SideBarNavigationButtons = (props: {
     click: (event: React.MouseEvent<HTMLElement>) => void;
   }) => {
-      
+    
+    const signOut = useSignOut();
+    const navigate = useNavigate();
+
     const navigationButtonClick = props.click;
+
+    function logout() {
+      signOut()
+      localStorage.removeItem("data")
+      toast.success(`Logged out successfully`, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        });
+      navigate("/auth/login")
+    }
   
     return (
       <nav className="side-bar">
@@ -36,7 +59,7 @@ export const SideBarNavigationButtons = (props: {
             </svg>
           </div>
         </div>
-        <div className="avatar">
+        <div className="avatar" onClick={logout}>
           <img src={"/assets/image-avatar.png"} alt="avatar" />
         </div>
       </nav>

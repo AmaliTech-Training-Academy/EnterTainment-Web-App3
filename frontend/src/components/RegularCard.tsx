@@ -10,9 +10,9 @@ const RegularCard = (props: any) => {
           <div className="regular-card" key={index}>
             <>
               {item.isBookmarked ? (
-                <IsTicked data={"regular-bookmark"} />
+                <IsTicked data={"regular-bookmark"} originalData={item} />
               ) : (
-                <NotTicked data={"regular-bookmark"} />
+                <NotTicked data={"regular-bookmark"} originalData={item}/>
               )}
             </>
             <div className="play-container">
