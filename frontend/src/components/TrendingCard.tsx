@@ -1,9 +1,10 @@
 import { IsTicked } from "./Bookmark";
 import { NotTicked } from "./Bookmark";
 
+
 const TrendingCard = (data: any) => {
   return (
-    <div className="trending-card" key={data.index}>
+    <div className="trending-card" key={data.key}>
       <img src={data.image} alt={data.title} className="media-image"></img>
       <>
         {data.isBookmarked ? (

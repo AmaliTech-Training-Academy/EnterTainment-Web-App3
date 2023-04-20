@@ -3,249 +3,622 @@
 @tailwind utilities;
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;500&display=swap");
 
-
-
 body {
-     background-color: #10141e; 
-    overflow-x: hidden;
-    width: 100%;
-    background-color: none;
-  }
+  background-color: #10141e;
+  overflow-x: hidden;
+  width: 100%;
+  background-color: none;
+}
 
-  .wrapper {
-    position: absolute;
-    width: 100%;
-    max-width: 1440px;
-    top: 0;
-  }
+.wrapper {
+  position: absolute;
+  width: 100%;
+  max-width: 1440px;
+  top: 0;
+}
+.side-bar {
+  position: absolute;
+  width: 96px;
+  height: 960px;
+  background-color: #161d2f;
+  border-radius: 20px;
+  left: 32px;
+  top: 32px;
+
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.logo {
+  position: absolute;
+  width: 32px;
+  height: 25.6px;
+  left: 31.86px;
+  top: 35.41px;
+}
+
+.pages {
+  position: absolute;
+  width: 20px;
+  height: 200px;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+
+  top: 136px;
+  left: 38px;
+}
+.pages > * {
+  fill: #5a698f;
+}
+.pages > * > svg {
+  width: 20px;
+  height: 20px;
+  object-fit: inherit;
+}
+.pages > * > svg:hover {
+  cursor: pointer;
+  fill: #fc4747;
+}
+.avatar {
+  position: absolute;
+  top: 888px;
+  left: 28px;
+}
+.avatar > img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+.logo,
+.avatar:hover {
+  cursor: pointer;
+}
+.active {
+  fill: #ffffff;
+}
+
+.search-bar {
+  display: flex;
+  height: 32px;
+  position: absolute;
+  width: 381px;
+  left: 164px;
+  top: 64px;
+  gap: 24px;
+}
+.search-input {
+  position: absolute;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 300px;
+  line-height: 30px;
+  background-color: transparent;
+  caret-color: #fc4747;
+  width: 334px;
+  height: 46px;
+  border: none;
+  outline: none;
+  padding-bottom: 14px;
+  left: 56px;
+}
+.search-input:focus {
+  width: 70vw;
+  border-bottom: 1px solid #5a698f;
+}
+.search-input::placeholder {
+  color: #ffffff;
+  font-size: 24px;
+  line-height: 30px;
+  mix-blend-mode: normal;
+  opacity: 0.5;
+  font-weight: 300px;
+
+  position: absolute;
+}
+.search-input:hover {
+  cursor: pointer;
+}
+
+.page-container {
+  position: absolute;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin: 0px;
+  padding: 0px;
+  margin-top: 130px;
+  left: 164px;
+  width: 100%;
+  height: 100%;
+}
+
+.trending-view {
+  position: absolute;
+  margin: 0px;
+  padding: 0px;
+  width: 2554px;
+  height: 295px;
+}
+.section-title {
+  margin: 0;
+  padding: 0;
+  font-size: 32px;
+  line-height: 40.32px;
+  letter-spacing: -0.5px;
+  font-weight: 300px;
+  color: #ffffff;
+}
+.carousel {
+  position: absolute;
+  align-items: center;
+  max-width: 1255px;
+  width: 79vw;
+
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: auto;
+  overflow-x: auto;
+  gap: 40px;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+.trending-card {
+  scroll-snap-align: start;
+  margin: 0px;
+  padding: 0px;
+  width: 470px;
+  height: 230px;
+  background-color: #5a698f;
+  margin-top: 25px;
+  border-radius: 8px;
+}
+.trending-card:hover {
+  cursor: pointer;
+}
+.media-image {
+  position: absolute;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  width: 470px;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.trending-bookmark {
+  position: absolute;
+  margin: 0px;
+  padding: 0px;
+  height: 32px;
+  width: 32px;
+  border-radius: 50px;
+  background: rgba(16, 20, 30, 0.5);
+  margin-left: 414px;
+  margin-right: 24px;
+  margin-top: 16px;
+  z-index: 1;
+  justify-content: center;
+}
+.trending-card > .play {
+  position: absolute;
+  margin: 0px;
+  padding: 0px;
+  height: 48px;
+  width: 117px;
+  border-radius: 28.5px;
+  margin-left: 177px;
+  margin-right: 177px;
+  margin-top: 91px;
+  z-index: 1;
+  box-shadow: none;
+  border: 0px;
+  opacity: 0;
+  display: flex;
+}
+.play > svg {
+  margin: 0;
+  padding: 0;
+  fill: #fff;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 9px;
+}
+.play > span {
+  margin: 0;
+  padding: 0;
+  fill: #fff;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 19px;
+  font-size: 18px;
+  line-height: 23px;
+}
+.trending-card:hover .play {
+  background-color: rgba(255, 255, 255, 0.25);
+  opacity: 1;
+}
+.details-container {
+  position: absolute;
+  margin: 0px;
+  padding: 0px;
+  display: block;
+  gap: 10px;
+  z-index: 1;
+  color: white;
+  margin-top: 130px;
+  height: 100px;
+  width: 470px;
+}
+.details {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  margin-left: 24px;
+  margin-bottom: 24px;
+  margin-top: 24px;
+}
+
+.details > h2 {
+  margin: 0px;
+  padding: 0px;
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 500px;
+}
+.details-top {
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  gap: 8px;
+  height: 19px;
+  font-size: 15px;
+  line-height: 19px;
+  margin-bottom: 3px;
+  font-weight: 300px;
+  mix-blend-mode: normal;
+  opacity: 0.75;
+}
+.details-top > li {
+  margin: 0;
+  padding: 0;
+  width: 3px;
+  height: 3px;
+}
+
+.regular-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  row-gap: 32px;
+}
+.regular-card {
+  width: 280px;
+  height: 226px;
+  border-radius: 8px;
+}
+.regular-card:hover {
+  cursor: pointer;
+}
+.regular-bookmark {
+  margin: 0px;
+  padding: 0px;
+  position: absolute;
+  height: 32px;
+  width: 32px;
+  border-radius: 50px;
+  background: rgba(16, 20, 30, 0.5);
+  z-index: 2;
+  justify-content: center;
+  margin-left: 232px;
+  margin-top: 16px;
+  margin-right: 16px;
+}
+.bookmarkTick > svg {
+  position: absolute;
+  margin: 0px;
+  padding: 0px;
+  margin-left: 10px;
+  margin-top: 9px;
+  stroke: #fff;
+  fill: none;
+}
+.bookmarkTick:hover {
+  background-color: #ffffff;
+  opacity: 1;
+}
+.bookmarkTick:hover > svg {
+  stroke: #10141e;
+  fill: none;
+}
+.ticked > svg {
+  fill: #ffffff;
+  opacity: 1;
+}
+.ticked:hover > svg {
+  fill: #10141e;
+  opacity: 1;
+}
+.play-container {
+  height: 174px;
+  width: 280px;
+  background-color: #5a698f;
+  border-radius: 8px;
+}
+.play-container > .play {
+  position: absolute;
+  height: 48px;
+  width: 117px;
+  border-radius: 28.5px;
+  z-index: 1;
+  border: 0px;
+  display: flex;
+  margin-top: 63px;
+  margin-left: 77px;
+  opacity: 0;
+}
+.play-container:hover .play {
+  background-color: rgba(255, 255, 255, 0.25);
+  opacity: 1;
+}
+.movie-cover {
+  margin: 0px;
+  padding: 0px;
+  margin-bottom: 0px;
+  border-radius: 8px;
+  height: 174px;
+  width: 280px;
+}
+.movie-details {
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  gap: 8px;
+  height: 16px;
+  font-size: 13px;
+  line-height: 16px;
+  margin-top: 8px;
+  color: #ffffff;
+  font-weight: 300px;
+  mix-blend-mode: normal;
+  opacity: 0.75;
+}
+.movie-details > li {
+  margin: 0;
+  padding: 0;
+  width: 3px;
+  height: 3px;
+}
+.regular-card > h2 {
+  margin: 0px;
+  padding: 0px;
+  margin-top: 5px;
+  font-size: 18px;
+  line-height: 23px;
+  font-weight: 500px;
+}
+.bottom-space {
+  margin-bottom: 52px;
+}
+.regular-view > .section-title {
+  margin-bottom: 38px;
+}
+.recommended-view {
+  position: absolute;
+  top: 335px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.recommended-view > .section-title {
+  margin-bottom: 32px;
+}
+.search-view > .section-title {
+  margin-bottom: 32px;
+}
+
+@media screen and (min-width: 481px) and (max-width: 820px) {
   .side-bar {
-    position: absolute;
-    width: 96px;
-    height: 960px;
-    background-color: #161d2f;
-    border-radius: 20px;
-    left: 32px;
-    top: 32px;
-    
-  
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+    width: 719px;
+    height: 72px;
+    top: 23px;
+    left: 25px;
+    flex-direction: row;
   }
   .logo {
-    position: absolute;
-    width: 32px;
-    height: 25.6px;
-    left: 31.86px;
-    top: 35.41px;
+    left: 24px;
+    top: 24px;
   }
-  
   .pages {
-    position: absolute;
-    width: 20px;
-    height: 200px;
-    justify-content: space-between;
-    display: flex;
-    flex-direction: column;
-  
-    top: 136px;
-    left: 38px;
-  }
-  .pages > * {
-    fill: #5a698f;
-  }
-  .pages > * > svg {
-    width: 20px;
     height: 20px;
-    object-fit: inherit;
-  }
-  .pages > * > svg:hover {
-    cursor: pointer;
-    fill: #fc4747;
+    width: 172.92px;
+    flex-direction: row;
+    top: 27px;
+    left: 273px;
   }
   .avatar {
-    position: absolute;
-    top: 888px;
-    left: 28px;
+    top: 21px;
+    left: 671px;
   }
   .avatar > img {
-    width: 40px;
-    height: 40px;
-    object-fit: cover;
-  }
-  .logo,
-  .avatar:hover {
-    cursor: pointer;
-  }
-  .active {
-    fill: #ffffff;
-  }
-  
-  .search-bar {
-    display: flex;
+    width: 32px;
     height: 32px;
-    position: absolute;
-    width: 381px;
-    left: 164px;
-    top: 64px;
-    gap: 24px;
   }
-  .search-input {
-    position: absolute;
-    color: #ffffff;
-    font-size: 24px;
-    font-weight: 300px;
-    line-height: 30px;
-    background-color: transparent;
-    caret-color: #fc4747;
-    width: 334px;
-    height: 46px;
-    border: none;
-    outline: none;
-    padding-bottom: 14px;
-    left: 56px;
+  .search-bar {
+    left: 25px;
+    top: 128px;
   }
-  .search-input:focus {
-    width: 70vw;
-    border-bottom: 1px solid #5a698f;
-  }
-  .search-input::placeholder {
-    color: #ffffff;
-    font-size: 24px;
-    line-height: 30px;
-    mix-blend-mode: normal;
-    opacity: 0.5;
-    font-weight: 300px;
-  
-    position: absolute;
-  }
-  .search-input:hover {
-    cursor: pointer;
-  }
-  
+
   .page-container {
-    position: absolute;
-    color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    margin: 0px;
-    padding: 0px;
-    margin-top: 130px;
-    left: 164px;
-    width: 100%;
-    height: 100%;
-  
+    margin-top: 193px;
+    left: 25px;
   }
-  
+
   .trending-view {
-    position: absolute;
-    margin: 0px;
-    padding: 0px;
-    width: 2554px;
-    height: 295px;
-  }
-  .section-title {
-    margin: 0;
-    padding: 0;
-    font-size: 32px;
-    line-height: 40.32px;
-    letter-spacing: -0.5px;
-    font-weight: 300px;
-    color: #ffffff;
+    width: 743px;
   }
   .carousel {
+    max-width: 743px;
+    width: 99vw;
+  }
+
+  .recommended-view {
     position: absolute;
-    align-items: center;
-    max-width: 1255px;
-    width: 79vw;
-  
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: auto;
-    overflow-x: auto;
-    gap: 40px;
-    scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
+    top: 334px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
   }
-  .carousel::-webkit-scrollbar {
-    display: none;
+
+  .regular-container {
+    gap: 29px;
+    row-gap: 24px;
   }
-  .trending-card {
-    scroll-snap-align: start;
-    margin: 0px;
-    padding: 0px;
-    width: 470px;
-    height: 230px;
-    background-color: #5a698f;
-    margin-top: 25px;
+  .regular-card {
+    width: 220px;
+    height: 192px;
     border-radius: 8px;
   }
-  .trending-card:hover {
+  .regular-card:hover {
     cursor: pointer;
   }
-  .media-image {
-    position: absolute;
-    width: auto;
-    margin: 0;
-    padding: 0;
-    width: 470px;
-    height: 230px;
-    object-fit: cover;
+  .regular-bookmark {
+    margin-left: 172px;
+  }
+  .play-container {
+    height: 140px;
+    width: 220px;
+  }
+  .play-container > .play {
+    margin-top: 46px;
+    margin-left: 51px;
+  }
+
+  .movie-cover {
+    height: 140px;
+    width: 220px;
+  }
+  .movie-details {
+    height: 14px;
+    font-size: 13px;
+    line-height: 16px;
+  }
+
+  .recommended-view > .section-title {
+    margin-bottom: 24px;
+  }
+  .search-view > .section-title {
+    margin-bottom: 24px;
+  }
+  .bottom-space {
+    margin-bottom: 56px;
+  }
+}
+
+@media screen and (min-width: 376px) and (max-width: 480px) {
+  .side-bar {
+    border-radius: 0px;
+    width: 100vw;
+    height: 56px;
+    top: 0px;
+    left: 0px;
+    flex-direction: row;
+  }
+  .logo {
+    width: 25px;
+    height: 20px;
+    left: 1.5em;
+    top: 18px;
+  }
+  .logo > svg {
+    width: 25px;
+    height: 20px;
+  }
+  .pages {
+    height: 16px;
+    width: 133.54px;
+    flex-direction: row;
+
+    top: 20px;
+    left: 121px;
+  }
+  .pages > * > svg {
+    width: 16px;
+    height: 16px;
+  }
+  .avatar {
+    top: 16px;
+    left: 335px;
+  }
+  .avatar > img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .search-bar {
+    height: 24px;
+    width: 256px;
+    left: 1.5em;
+    top: 80px;
+    gap: 16px;
+  }
+  .search-input {
+    font-size: 16px;
+    line-height: 20px;
+    left: 40px;
+    top: calc(50% - 20px / 2);
+    height: 32px;
+    padding-bottom: 10px;
+  }
+  .search-input::placeholder {
+    font-size: 16px;
+    line-height: 20.16px;
+  }
+
+  .page-container {
+    margin: 0px;
+    padding: 0px;
+    margin-top: 128px;
+    left: 1.5em;
+  }
+
+  .trending-view {
+    width: 359px;
+    height: 181px;
+  }
+  .section-title {
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: -0.3125px;
+  }
+  .carousel {
+    width: 89vw;
+    gap: 1em;
+  }
+  .trending-card {
+    width: 240px;
+    height: 140px;
+    margin-top: 16px;
     border-radius: 8px;
   }
+  .media-image {
+    width: 240px;
+    height: 140px;
+  }
   .trending-bookmark {
-    position: absolute;
-    margin: 0px;
-    padding: 0px;
-    height: 32px;
-    width: 32px;
-    border-radius: 50px;
-    background: rgba(16, 20, 30, 0.5);
-    margin-left: 414px;
-    margin-right: 24px;
-    margin-top: 16px;
-    z-index: 1;
-    justify-content: center;
+    margin-left: 200px;
+    margin-right: 8px;
+    margin-top: 8px;
   }
   .trending-card > .play {
-    position: absolute;
-    margin: 0px;
-    padding: 0px;
-    height: 48px;
-    width: 117px;
-    border-radius: 28.5px;
-    margin-left: 177px;
-    margin-right: 177px;
-    margin-top: 91px;
-    z-index: 1;
-    box-shadow: none;
-    border: 0px;
-    opacity: 0;
-    display: flex;
+    margin-left: 61px;
+    margin-top: 46px;
   }
-  .play > svg {
-    margin: 0;
-    padding: 0;
-    fill: #fff;
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left: 9px;
-  }
-  .play > span {
-    margin: 0;
-    padding: 0;
-    fill: #fff;
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left: 19px;
-    font-size: 18px;
-    line-height: 23px;
-  }
-  .trending-card:hover .play {
-    background-color: rgba(255, 255, 255, 0.25);
-    opacity: 1;
-  }
+
   .details-container {
     position: absolute;
     margin: 0px;
@@ -254,641 +627,272 @@ body {
     gap: 10px;
     z-index: 1;
     color: white;
-    margin-top: 130px;
-    height: 100px;
-    width: 470px;
+    margin-top: 70px;
+    height: 70px;
+    width: 240px;
   }
   .details {
-    position: absolute;
-    margin: 0;
-    padding: 0;
-    margin-left: 24px;
-    margin-bottom: 24px;
-    margin-top: 24px;
+    margin-left: 16px;
+    margin-bottom: 16px;
+    margin-top: 16px;
   }
-  
+
   .details > h2 {
-    margin: 0px;
-    padding: 0px;
-    font-size: 24px;
-    line-height: 30px;
-    font-weight: 500px;
-  }
-  .details-top {
-    margin: 0px;
-    padding: 0px;
-    display: flex;
-    gap: 8px;
-    height: 19px;
     font-size: 15px;
     line-height: 19px;
-    margin-bottom: 3px;
-    font-weight: 300px;
-    mix-blend-mode: normal;
-    opacity: 0.75;
   }
-  .details-top > li {
-    margin: 0;
-    padding: 0;
-    width: 3px;
-    height: 3px;
+  .details-top {
+    height: 15px;
+    font-size: 12px;
+    line-height: 15px;
+    margin-bottom: 4px;
   }
-  
+
+  .recommended-view {
+    position: absolute;
+    top: 205px;
+    width: 90vw;
+  }
+
   .regular-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    row-gap: 32px;
+    gap: 1em;
+    row-gap: 16px;
   }
   .regular-card {
-    width: 280px;
-    height: 226px;
+    width: 164px;
+    height: 154px;
     border-radius: 8px;
   }
-  .regular-card:hover {
-    cursor: pointer;
-  }
   .regular-bookmark {
-    margin: 0px;
-    padding: 0px;
-    position: absolute;
-    height: 32px;
-    width: 32px;
-    border-radius: 50px;
-    background: rgba(16, 20, 30, 0.5);
-    z-index: 2;
-    justify-content: center;
-    margin-left: 232px;
-    margin-top: 16px;
-    margin-right: 16px;
+    margin-left: 124px;
+    margin-top: 8px;
+    margin-right: 8px;
   }
-  .bookmarkTick > svg {
-    position: absolute;
-    margin: 0px;
-    padding: 0px;
-    margin-left: 10px;
-    margin-top: 9px;
-    stroke: #fff;
-    fill: none;
-  }
-  .bookmarkTick:hover {
-    background-color: #ffffff;
-    opacity: 1;
-  }
-  .bookmarkTick:hover > svg {
-    stroke: #10141e;
-    fill: none;
-  }
-  .ticked > svg {
-    fill: #ffffff;
-    opacity: 1;
-  }
-  .ticked:hover > svg {
-    fill: #10141e;
-    opacity: 1;
-  }
+
   .play-container {
-    height: 174px;
-    width: 280px;
+    height: 110px;
+    width: 164px;
     background-color: #5a698f;
     border-radius: 8px;
   }
   .play-container > .play {
-    position: absolute;
-    height: 48px;
-    width: 117px;
-    border-radius: 28.5px;
-    z-index: 1;
-    border: 0px;
-    display: flex;
-    margin-top: 63px;
-    margin-left: 77px;
+    margin-top: 31px;
+    margin-left: 22px;
     opacity: 0;
   }
-  .play-container:hover .play {
-    background-color: rgba(255, 255, 255, 0.25);
-    opacity: 1;
-  }
   .movie-cover {
-    margin: 0px;
-    padding: 0px;
-    margin-bottom: 0px;
-    border-radius: 8px;
-    height: 174px;
-    width: 280px;
+    height: 110px;
+    width: 164px;
   }
   .movie-details {
-    margin: 0px;
-    padding: 0px;
-    display: flex;
     gap: 8px;
-    height: 16px;
-    font-size: 13px;
-    line-height: 16px;
+    height: 14px;
+    font-size: 11px;
+    line-height: 14px;
     margin-top: 8px;
-    color: #ffffff;
-    font-weight: 300px;
-    mix-blend-mode: normal;
-    opacity: 0.75;
-  }
-  .movie-details > li {
-    margin: 0;
-    padding: 0;
-    width: 3px;
-    height: 3px;
   }
   .regular-card > h2 {
-    margin: 0px;
-    padding: 0px;
-    margin-top: 5px;
-    font-size: 18px;
-    line-height: 23px;
-    font-weight: 500px;
+    margin-top: 4px;
+    font-size: 14px;
+    line-height: 18px;
   }
-  .regular-view > .section-title {
-    margin-bottom: 38px;
-  }
-  .recommended-view {
-    position: absolute;
-    top: 335px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-  }
+
   .recommended-view > .section-title {
-    margin-bottom: 32px;
+    margin-bottom: 24px;
   }
   .search-view > .section-title {
-    margin-bottom: 32px;
+    margin-bottom: 24px;
   }
-  
-  @media screen and (min-width: 481px) and (max-width: 768px) {
-    .side-bar {
-      width: 719px;
-      height: 72px;
-      top: 23px;
-      left: 25px;
-      flex-direction: row;
-    }
-    .logo {
-      left: 24px;
-      top: 24px;
-    }
-    .pages {
-      height: 20px;
-      width: 172.92px;
-      flex-direction: row;
-      top: 27px;
-      left: 273px;
-    }
-    .avatar {
-      top: 21px;
-      left: 671px;
-    }
-    .avatar > img {
-      width: 32px;
-      height: 32px;
-    }
-    .search-bar {
-      left: 25px;
-      top: 128px;
-    }
-  
-    .page-container {
-      margin-top: 193px;
-      left: 25px;
-    }
-  
-    .trending-view {
-      width: 743px;
-    }
-    .carousel {
-      max-width: 743px;
-      width: 99vw;
-    }
-  
-    .recommended-view {
-      position: absolute;
-      top: 334px;
-      display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-    }
-  
-    .regular-container {
-      gap: 29px;
-      row-gap: 24px;
-    }
-    .regular-card {
-      width: 220px;
-      height: 192px;
-      border-radius: 8px;
-    }
-    .regular-card:hover {
-      cursor: pointer;
-    }
-    .regular-bookmark {
-      margin-left: 172px;
-    }
-    .play-container {
-      height: 140px;
-      width: 220px;
-    }
-    .play-container > .play {
-      margin-top: 46px;
-      margin-left: 51px;
-    }
-  
-    .movie-cover {
-      height: 140px;
-      width: 220px;
-    }
-    .movie-details {
-      height: 14px;
-      font-size: 13px;
-      line-height: 16px;
-    }
-  
-    .recommended-view > .section-title {
-      margin-bottom: 24px;
-    }
-    .search-view > .section-title {
-      margin-bottom: 24px;
-    }
+  .bottom-space {
+    margin-bottom: 61px;
   }
-  
-  @media screen and (min-width: 376px) and (max-width: 480px) {
-    .side-bar {
-      border-radius: 0px;
-      width: 100vw;
-      height: 56px;
-      top: 0px;
-      left: 0px;
-      flex-direction: row;
-    }
-    .logo {
-      width: 25px;
-      height: 20px;
-      left: 1.5em;
-      top: 18px;
-    }
-    .logo > svg {
-      width: 25px;
-      height: 20px;
-    }
-    .pages {
-      height: 16px;
-      width: 133.54px;
-      flex-direction: row;
-  
-      top: 20px;
-      left: 121px;
-    }
-    .pages > * > svg {
-      width: 16px;
-      height: 16px;
-    }
-    .avatar {
-      top: 16px;
-      left: 335px;
-    }
-    .avatar > img {
-      width: 24px;
-      height: 24px;
-    }
-  
-    .search-bar {
-      height: 24px;
-      width: 256px;
-      left: 1.5em;
-      top: 80px;
-      gap: 16px;
-    }
-    .search-input {
-      font-size: 16px;
-      line-height: 20px;
-      left: 40px;
-      top: calc(50% - 20px / 2);
-      height: 32px;
-      padding-bottom: 10px;
-    }
-    .search-input::placeholder {
-      font-size: 16px;
-      line-height: 20.16px;
-    }
-  
-    .page-container {
-      margin: 0px;
-      padding: 0px;
-      margin-top: 128px;
-      left: 1.5em;
-    }
-  
-    .trending-view {
-      width: 359px;
-      height: 181px;
-    }
-    .section-title {
-      font-size: 20px;
-      line-height: 25px;
-      letter-spacing: -0.3125px;
-    }
-    .carousel {
-      width: 89vw;
-      gap: 1em;
-    }
-    .trending-card {
-      width: 240px;
-      height: 140px;
-      margin-top: 16px;
-      border-radius: 8px;
-    }
-    .media-image {
-      width: 240px;
-      height: 140px;
-    }
-    .trending-bookmark {
-      margin-left: 200px;
-      margin-right: 8px;
-      margin-top: 8px;
-    }
-    .trending-card > .play {
-      margin-left: 61px;
-      margin-top: 46px;
-    }
-  
-    .details-container {
-      position: absolute;
-      margin: 0px;
-      padding: 0px;
-      display: block;
-      gap: 10px;
-      z-index: 1;
-      color: white;
-      margin-top: 70px;
-      height: 70px;
-      width: 240px;
-    }
-    .details {
-      margin-left: 16px;
-      margin-bottom: 16px;
-      margin-top: 16px;
-    }
-  
-    .details > h2 {
-      font-size: 15px;
-      line-height: 19px;
-    }
-    .details-top {
-      height: 15px;
-      font-size: 12px;
-      line-height: 15px;
-      margin-bottom: 4px;
-    }
-  
-    .recommended-view {
-      position: absolute;
-      top: 205px;
-      width: 90vw;
-    }
-  
-    .regular-container {
-      gap: 1em;
-      row-gap: 16px;
-    }
-    .regular-card {
-      width: 164px;
-      height: 154px;
-      border-radius: 8px;
-    }
-    .regular-bookmark {
-      margin-left: 124px;
-      margin-top: 8px;
-      margin-right: 8px;
-    }
-  
-    .play-container {
-      height: 110px;
-      width: 164px;
-      background-color: #5a698f;
-      border-radius: 8px;
-    }
-    .play-container > .play {
-      margin-top: 31px;
-      margin-left: 22px;
-      opacity: 0;
-    }
-    .movie-cover {
-      height: 110px;
-      width: 164px;
-    }
-    .movie-details {
-      gap: 8px;
-      height: 14px;
-      font-size: 11px;
-      line-height: 14px;
-      margin-top: 8px;
-    }
-    .regular-card > h2 {
-      margin-top: 4px;
-      font-size: 14px;
-      line-height: 18px;
-    }
-  
-    .recommended-view > .section-title {
-      margin-bottom: 24px;
-    }
-    .search-view > .section-title {
-      margin-bottom: 24px;
-    }
+}
+@media screen and (max-width: 375px) {
+  .side-bar {
+    border-radius: 0px;
+    width: 375px;
+    height: 56px;
+    top: 0px;
+    left: 0px;
+    flex-direction: row;
   }
-  @media screen and (max-width: 375px) {
-    .side-bar {
-      border-radius: 0px;
-      width: 375px;
-      height: 56px;
-      top: 0px;
-      left: 0px;
-      flex-direction: row;
-    }
-    .logo {
-      width: 25px;
-      height: 20px;
-      left: 16px;
-      top: 18px;
-    }
-    .logo > svg {
-      width: 25px;
-      height: 20px;
-    }
-    .pages {
-      height: 16px;
-      width: 133.54px;
-      flex-direction: row;
-  
-      top: 20px;
-      left: 121px;
-    }
-    .pages > * > svg {
-      width: 16px;
-      height: 16px;
-    }
-    .avatar {
-      top: 16px;
-      left: 335px;
-    }
-    .avatar > img {
-      width: 24px;
-      height: 24px;
-    }
-  
-    .search-bar {
-      height: 24px;
-      width: 256px;
-      left: 16px;
-      top: 80px;
-      gap: 16px;
-    }
-    .search-input {
-      font-size: 16px;
-      line-height: 20px;
-      left: 40px;
-      top: calc(50% - 20px / 2);
-      height: 32px;
-      padding-bottom: 10px;
-    }
-    .search-input::placeholder {
-      font-size: 16px;
-      line-height: 20.16px;
-    }
-  
-    .page-container {
-      margin: 0px;
-      padding: 0px;
-      margin-top: 128px;
-      left: 16px;
-    }
-  
-    .trending-view {
-      width: 359px;
-      height: 181px;
-    }
-    .section-title {
-      font-size: 20px;
-      line-height: 25px;
-      letter-spacing: -0.3125px;
-    }
-    .carousel {
-      width: 359px;
-      gap: 16px;
-    }
-    .trending-card {
-      width: 240px;
-      height: 140px;
-      margin-top: 16px;
-      border-radius: 8px;
-    }
-    .media-image {
-      width: 240px;
-      height: 140px;
-    }
-    .trending-bookmark {
-      margin-left: 200px;
-      margin-right: 8px;
-      margin-top: 8px;
-    }
-    .trending-card > .play {
-      margin-left: 61px;
-      margin-top: 46px;
-    }
-  
-    .details-container {
-      position: absolute;
-      margin: 0px;
-      padding: 0px;
-      display: block;
-      gap: 10px;
-      z-index: 1;
-      color: white;
-      margin-top: 70px;
-      height: 70px;
-      width: 240px;
-    }
-    .details {
-      margin-left: 16px;
-      margin-bottom: 16px;
-      margin-top: 16px;
-    }
-  
-    .details > h2 {
-      font-size: 15px;
-      line-height: 19px;
-    }
-    .details-top {
-      height: 15px;
-      font-size: 12px;
-      line-height: 15px;
-      margin-bottom: 4px;
-    }
-  
-    .recommended-view {
-      position: absolute;
-      top: 205px;
-      width: 343px;
-    }
-  
-    .regular-container {
-      width: 343px;
-      gap: 15px;
-      row-gap: 16px;
-    }
-    .regular-card {
-      width: 164px;
-      height: 154px;
-      border-radius: 8px;
-    }
-    .regular-bookmark {
-      margin-left: 124px;
-      margin-top: 8px;
-      margin-right: 8px;
-    }
-  
-    .play-container {
-      height: 110px;
-      width: 164px;
-      background-color: #5a698f;
-      border-radius: 8px;
-    }
-    .play-container > .play {
-      margin-top: 31px;
-      margin-left: 22px;
-      opacity: 0;
-    }
-    .movie-cover {
-      height: 110px;
-      width: 164px;
-    }
-    .movie-details {
-      gap: 8px;
-      height: 14px;
-      font-size: 11px;
-      line-height: 14px;
-      margin-top: 8px;
-    }
-    .regular-card > h2 {
-      margin-top: 4px;
-      font-size: 14px;
-      line-height: 18px;
-    }
-  
-    .recommended-view > .section-title {
-      margin-bottom: 24px;
-    }
-    .search-view > .section-title {
-      margin-bottom: 24px;
-    }
+  .logo {
+    width: 25px;
+    height: 20px;
+    left: 16px;
+    top: 18px;
   }
-  
-  
+  .logo > svg {
+    width: 25px;
+    height: 20px;
+  }
+  .pages {
+    height: 16px;
+    width: 133.54px;
+    flex-direction: row;
 
+    top: 20px;
+    left: 121px;
+  }
+  .pages > * > svg {
+    width: 16px;
+    height: 16px;
+  }
+  .avatar {
+    top: 16px;
+    left: 335px;
+  }
+  .avatar > img {
+    width: 24px;
+    height: 24px;
+  }
 
+  .search-bar {
+    height: 24px;
+    width: 256px;
+    left: 16px;
+    top: 80px;
+    gap: 16px;
+  }
+  .search-input {
+    font-size: 16px;
+    line-height: 20px;
+    left: 40px;
+    top: calc(50% - 20px / 2);
+    height: 32px;
+    padding-bottom: 10px;
+  }
+  .search-input::placeholder {
+    font-size: 16px;
+    line-height: 20.16px;
+  }
+
+  .page-container {
+    margin: 0px;
+    padding: 0px;
+    margin-top: 128px;
+    left: 16px;
+  }
+
+  .trending-view {
+    width: 359px;
+    height: 181px;
+  }
+  .section-title {
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: -0.3125px;
+  }
+  .carousel {
+    width: 359px;
+    gap: 16px;
+  }
+  .trending-card {
+    width: 240px;
+    height: 140px;
+    margin-top: 16px;
+    border-radius: 8px;
+  }
+  .media-image {
+    width: 240px;
+    height: 140px;
+  }
+  .trending-bookmark {
+    margin-left: 200px;
+    margin-right: 8px;
+    margin-top: 8px;
+  }
+  .trending-card > .play {
+    margin-left: 61px;
+    margin-top: 46px;
+  }
+
+  .details-container {
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    display: block;
+    gap: 10px;
+    z-index: 1;
+    color: white;
+    margin-top: 70px;
+    height: 70px;
+    width: 240px;
+  }
+  .details {
+    margin-left: 16px;
+    margin-bottom: 16px;
+    margin-top: 16px;
+  }
+
+  .details > h2 {
+    font-size: 15px;
+    line-height: 19px;
+  }
+  .details-top {
+    height: 15px;
+    font-size: 12px;
+    line-height: 15px;
+    margin-bottom: 4px;
+  }
+
+  .recommended-view {
+    position: absolute;
+    top: 205px;
+    width: 343px;
+  }
+
+  .regular-container {
+    width: 343px;
+    gap: 15px;
+    row-gap: 16px;
+  }
+  .regular-card {
+    width: 164px;
+    height: 154px;
+    border-radius: 8px;
+  }
+  .regular-bookmark {
+    margin-left: 124px;
+    margin-top: 8px;
+    margin-right: 8px;
+  }
+
+  .play-container {
+    height: 110px;
+    width: 164px;
+    background-color: #5a698f;
+    border-radius: 8px;
+  }
+  .play-container > .play {
+    margin-top: 31px;
+    margin-left: 22px;
+    opacity: 0;
+  }
+  .movie-cover {
+    height: 110px;
+    width: 164px;
+  }
+  .movie-details {
+    gap: 8px;
+    height: 14px;
+    font-size: 11px;
+    line-height: 14px;
+    margin-top: 8px;
+  }
+  .regular-card > h2 {
+    margin-top: 4px;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .recommended-view > .section-title {
+    margin-bottom: 24px;
+  }
+  .search-view > .section-title {
+    margin-bottom: 24px;
+  }
+  .bottom-space {
+    margin-bottom: 61px;
+  }
+}

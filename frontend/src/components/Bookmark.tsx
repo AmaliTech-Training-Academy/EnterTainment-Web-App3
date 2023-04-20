@@ -1,6 +1,7 @@
 import bookmarkClick from "./BookmarkClick";
+import { dataType } from "./CustomType";
 
-export const NotTicked = (props: any) => {
+export const NotTicked = (props: {data: string, originalData: dataType}) => {
     let view = props.data;
     const originalData = props.originalData
   
@@ -16,7 +17,7 @@ export const NotTicked = (props: any) => {
     );
   };
   
-  export const IsTicked = (props: any) => {
+  export const IsTicked = (props: {data: string, originalData: any}) => {
     let view = props.data;
     const originalData = props.originalData
    

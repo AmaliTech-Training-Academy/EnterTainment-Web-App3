@@ -1,13 +1,9 @@
 import React from "react";
+import { searchType } from "./CustomType";
 
-export interface acceptedType {
-    search: ((e: React.ChangeEvent<HTMLInputElement>) => void) | undefined;
-    word: string;
-}
+export const ViewContext = React.createContext<searchType>({} as searchType);
 
-export const ViewContext = React.createContext<acceptedType>({} as acceptedType);
-
-interface Child extends acceptedType {
+interface Child extends searchType {
   children: React.ReactNode;
 }
 export const ViewProvider = ({

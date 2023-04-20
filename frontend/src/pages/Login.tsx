@@ -141,7 +141,7 @@ export default function Login() {
                   className=' w-full h-12 mt-4 bg-red rounded-lg outline-none text-xl hover:bg-white hover:text-teal-blue hover:cursor-pointer'
                 />
             </form>
-            <div className=' mt-6'>
+            <div className='text-center mt-6'>
                 Don't have an account? 
                 <span className=' text-red'> 
                   <Link to={`/auth/register`}> Sign up</Link>

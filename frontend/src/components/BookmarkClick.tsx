@@ -1,7 +1,7 @@
-import { movie } from "../dataTypes";
+import { dataType } from "./CustomType";
 
 const bookmarkClick = (event: React.MouseEvent<HTMLElement>, data: any) => {
-  const movies = JSON.parse(localStorage.getItem("data") || "[]") as movie[];
+  const movies = JSON.parse(localStorage.getItem("data") || "[]") as dataType[];
   const updatedData = movies.map((item) => {
     return item.title === data.title ? { ...item, isBookmarked: !item.isBookmarked } : item;
   });

@@ -1,4 +1,4 @@
-import React, { MouseEvent } from "react";
+import { MouseEvent } from "react";
 
 let grab: boolean = false;
 let startPos: number;
@@ -25,8 +25,8 @@ export const forMouseMove = (event: MouseEvent<HTMLElement>) => {
   event.preventDefault();
 
   if (grab) {
-    const currentPos = event.pageX - carousel.getClientRects()[0].left;
-    const distance = currentPos - startPos;
+    const currentPos: number = event.pageX - carousel.getClientRects()[0].left;
+    const distance: number = currentPos - startPos;
     carousel.scrollLeft = leftScroll - distance;
   }
 };
