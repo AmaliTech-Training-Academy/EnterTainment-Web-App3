@@ -1,8 +1,9 @@
 import TrendingCard from "./TrendingCard";
 
 import { forMouseDown, forMouseLeave, forMouseMove, forMouseUp } from "./CarouselScroll";
+import { dataType } from "./CustomType";
 
-const Carousel = (props: any) => {
+const Carousel = (props: {data: dataType[]}) => {
     let trending = props.data;
   
     return (
@@ -13,7 +14,7 @@ const Carousel = (props: any) => {
         onMouseUp={forMouseUp}
         onMouseMove={forMouseMove}
       >
-        {trending.map((item: any, index: number) => {
+        {trending.map((item: dataType, index: number) => {
           return (
             <TrendingCard
               key={index}

@@ -1,4 +1,4 @@
-export interface itemType {
+export interface dataType {
     title: string;
     thumbnail: {
         trending: {
@@ -17,3 +17,19 @@ export interface itemType {
     isBookmarked: boolean;
     isTrending: boolean;
 };
+
+export interface searchType {
+    search: ((e: React.ChangeEvent<HTMLInputElement>) => void) | undefined;
+    word: string;
+}
+
+export interface trendingCardDataType {
+    key: number;
+    title: string;
+    year: number
+    category: string;
+    rating: string;
+    image: string;
+    isBookmarked: boolean;
+
+}

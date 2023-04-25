@@ -1,11 +1,11 @@
 import { IsTicked, NotTicked } from "./Bookmark";
-import { itemType } from "./CustomType";
-const RegularCard = (props: any) => {
-  const recommendations: itemType[] = props.data;
+import { dataType } from "./CustomType";
+const RegularCard = (props: {data: dataType[]}) => {
+  const recommendations: dataType[] = props.data;
 
   return (
     <>
-      {recommendations.map((item: itemType, index: number) => {
+      {recommendations.map((item: dataType, index: number) => {
         return (
           <div className="regular-card" key={index}>
             <>

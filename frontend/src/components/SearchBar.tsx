@@ -5,12 +5,12 @@ import { NavigateFunction, useNavigate } from "react-router-dom";
 const SearchBar = () => {
   const navigate: NavigateFunction = useNavigate();
   const data = useContext(ViewContext);
-  const search = data.search;
-  const searchString = data.word;
+  const search: ((e: React.ChangeEvent<HTMLInputElement>) => void) | undefined = data.search;
+  const searchString: string = data.word;
 
   const active = document.querySelector(".active");
-  let page = active?.classList[0];
-  let word = "movies or TV series";
+  let page: string = active?.classList[0]!;
+  let word: string = "movies or TV series";
 
   let searchPlaceholder = () => {
     return page === "home"

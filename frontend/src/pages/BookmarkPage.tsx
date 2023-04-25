@@ -1,12 +1,12 @@
+import { dataType } from "../components/CustomType";
 import RegularCard from "../components/RegularCard";
 import jsonData from "../data.json";
-import { movie } from "../dataTypes";
 
 const BookmarkPage = () => {
   if (!localStorage.getItem("data")) {
     localStorage.setItem("data", JSON.stringify(jsonData));
   }
-  const data = JSON.parse(localStorage.getItem("data") || "[]") as movie[];
+  const data = JSON.parse(localStorage.getItem("data") || "[]") as dataType[];
 
   const bookmarked = data.filter((item) => {
     return item.isBookmarked === true;
@@ -30,8 +30,10 @@ const BookmarkPage = () => {
       </div>
       <div className="regular-view">
         <p className="section-title">Bookmarked TV Series</p>
-        <div className="regular-container">
-          <RegularCard data={tvShows} />
+        <div className="bottom-space">
+          <div className="regular-container">
+            <RegularCard data={tvShows} />
+          </div>
         </div>
       </div>
     </div>

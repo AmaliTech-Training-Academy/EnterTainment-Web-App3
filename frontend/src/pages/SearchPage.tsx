@@ -1,13 +1,13 @@
 import RegularCard from "../components/RegularCard";
 import data from "../data.json";
 import { useLocation } from "react-router-dom";
-import { movie } from "../dataTypes";
+import { dataType } from "../components/CustomType";
 
-const SearchPage = (props: any) => {
+const SearchPage = (props: {data: string}) => {
   if (!localStorage.getItem("data")) {
     localStorage.setItem("data", JSON.stringify(data));
   }
-  const movies = JSON.parse(localStorage.getItem("data") || "[]") as movie[];
+  const movies = JSON.parse(localStorage.getItem("data") || "[]") as dataType[];
 
   let word: string = props.data;
 

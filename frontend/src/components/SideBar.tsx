@@ -14,13 +14,13 @@ const SideBar = () => {
     });
     const button = event.currentTarget;
     button?.classList.add("active");
-    let page = event.currentTarget.classList[0];
+    let page: string = event.currentTarget.classList[0];
     setPageElement(page);
     navigate(`/${page}`);
   };
 
   React.useEffect(() => {
-    const path = location.pathname.substring(1);
+    const path: string = location.pathname.substring(1);
     const active = document.querySelectorAll(".active");
 
     if (path.includes("search")) {

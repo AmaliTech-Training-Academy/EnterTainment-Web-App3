@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import rawData from "./../data.json";
 import RegularCard from "../components/RegularCard";
-import { movie } from "../dataTypes";
+import { dataType } from "../components/CustomType";
 
 export default function Movies() {
   if (!localStorage.getItem("data")) {
     localStorage.setItem("data", JSON.stringify(rawData));
   }
-  const movies = JSON.parse(localStorage.getItem("data") || "[]") as movie[];
+  const movies = JSON.parse(localStorage.getItem("data") || "[]") as dataType[];
 
   const [data, setData] = useState(movies);
 
@@ -18,9 +18,11 @@ export default function Movies() {
   return (
     <div className="page-container">
       <div className="regular-veiw">
-        <div className="section-title text-left">Movies</div>
-        <div className="regular-container mt-4">
-          <RegularCard data={data} />
+        <p className="section-title text-left">Movies</p>
+        <div className="bottom-space">
+          <div className="regular-container mt-[38px]">
+            <RegularCard data={data} />
+          </div>
         </div>
       </div>
     </div>
